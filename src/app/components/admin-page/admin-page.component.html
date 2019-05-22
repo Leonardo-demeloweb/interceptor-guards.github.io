@@ -1,0 +1,22 @@
+<p>
+  admin1-page works!
+</p>
+<h1>admin1-page works!</h1>
+<mat-icon>home</mat-icon>
+
+<button mat-button [matMenuTriggerFor]="animals">Pages Index</button>
+
+<mat-menu #animals="matMenu">
+  <button mat-menu-item [matMenuTriggerFor]="user">User</button>
+  <button mat-menu-item [matMenuTriggerFor]="admin">
+    Admin
+  </button>
+</mat-menu>
+
+<mat-menu #user="matMenu">
+  <button mat-menu-item [routerLink]="['/user1']">User 1</button>
+</mat-menu>
+
+<mat-menu #admin="matMenu">
+  <button mat-menu-item [routerLink]="['/admin1']">Admin 1</button>
+</mat-menu>

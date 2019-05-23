@@ -1,11 +1,13 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
+import { CanActivate } from "@angular/router";
 
 import { AdminPageComponent } from "./components/admin-page/admin-page.component";
 import { UserPageComponent } from "./components/user-page/user-page.component";
 import { PageUnauthorizedComponent } from "./components/page-unauthorized/page-unauthorized.component";
 
 import { AuthGuard } from "./guards/auth.guard";
+import { AdminGuard } from "./guards/admin.guard";
 
 const routes: Routes = [
   { path: "", redirectTo: "user1", pathMatch: "full" },
@@ -14,7 +16,7 @@ const routes: Routes = [
   {
     path: "admin1",
     component: AdminPageComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AdminGuard]
   }
 ];
 
